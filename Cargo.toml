@@ -1,0 +1,30 @@
+[package]
+name = "simple-docx-template"
+version = "0.1.0"
+edition = "2024"
+publish = ["crates-io"]
+description = "Read the template from the .docx file, replace placeholders with actual content, and then generate a new .docx file."
+license = "MIT"
+homepage = "https://github.com/Moon1102/simple-docx-template"
+repository = "https://github.com/Moon1102/simple-docx-template"
+keywords = ["Docx", "Word", "Template", "Placeholders"]
+include = ["src/**/*", "Cargo.toml", "LICENSE", "README.md"]
+
+[dependencies]
+async_zip = { version = "*", features = ["deflate", "tokio"] }
+
+quick-xml = { version = "*", features = ["async-tokio"] }
+
+tokio = { version = "*", features = ["fs", "macros", "rt-multi-thread"] }
+tokio-util = { version = "*", features = ["compat"] }
+
+serde_json = { version = "*" }
+
+regex = { version = "*" }
+base64 = { version = "*" }
+uuid = { version = "*", features = ["v7"] }
+
+bytes = { version = "1" }
+
+[dev-dependencies]
+serde = { version = "*", features = ["derive"] }
